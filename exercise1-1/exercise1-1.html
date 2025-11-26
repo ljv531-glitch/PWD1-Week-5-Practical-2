@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W5P2 - Exercise 1.1</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.1</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Create a sketch with a 600px by 600px canvas.</p>
+            <p>Give the sketch a background colour of your choosing (other than black or white). The example output in the 
+                video uses a random background colour but that's not a requirement.
+            </p>
+            <p>Generate 100 random rectangles (random coordinates and random dimensions) and store the generated data in an array 
+                of object literals. Each object should contain all the information needed to make one rectangle (coordinates and dimensions). 
+                It is recommended that you keep the rectangles small, ideally between 5 and 10 pixels in width and height.
+            </p>
+            <p>Draw the rectangles on the canvas. Rectangles that are stored at <em>even</em> indicies should be filled in black and rectangles 
+            stored at <em>odd</em> indicies should be filled in white.</p>
+            <p>When the user presses the space bar, generate 100 new random rectangles and store them appropriately. In the video, a new random background 
+                colour is also chosen when the user presses space. You don't need to do this unless you feel like it! 
+            </p>
+            <p>When you're finished, check your work using <a href="check-exercise1-1.html">check-exercise1-1.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="600" height="600" controls>
+                    <source src="./assets/exercise1-1.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You will need a global array to store the rectangle information. Because you will need to call the p5.js <code>random()</code> function, 
+                    you can't populate the array until after <code>createCanvas()</code> has been called (this is a quirk of p5.js). It is recommended that you put 
+                    the code to populate the array in its own function, which you then call imediately after calling <code>createCanvas()</code>.</p>
+                    <p>To populate the array, you will need a for loop. Inside the for loop, create an object literal that has a key for each property you would need to 
+                        draw a rectangle. The value of each key should be randomly generated. Add the new object literal to your global array.
+                    </p>
+                    <p>To set the fill colour of a shape based on its index in the array, you can use a simple conditional. To check if a number is even or odd, you can 
+                        use the % (remainder / modulo) operator. Remember that an even number is divisible by 2...
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

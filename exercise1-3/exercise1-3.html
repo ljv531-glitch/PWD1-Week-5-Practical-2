@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W5P2 - Exercise 1.3</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.3</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Create a sketch with a 400px by 400px canvas.</p>
+            <p>Virtual environments often contain obstacles that the player cannot move through. Your task 
+                is to create a simple environment with a moveable player object and an obstacle. The player 
+                object can be moved with the arrow keys but it can't pass through the obstacle. See the video 
+                below. The green square is the player and the black rectangle is the obstacle.
+            </p>
+            <p>Create two global objects, one called <code>player</code> and one called <code>obstacle</code>.</p>
+            <p>Set the <code>player</code> properties as shown in the table below:</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <td>Value</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><code>x</code></th>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <th><code>y</code></th>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <th><code>size</code></th>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Set the <code>obstacle</code> properties as shown in the table below:</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <td>Value</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><code>x</code></th>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <th><code>y</code></th>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <th><code>width</code></th>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <th><code>height</code></th>
+                        <td>200</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Draw a square to represent the <code>player</code> object and a rectangle to represent 
+            the <code>obstacle</code>. Use the default drawing mode for rectangles.</p>
+            <p>Make it possible to move the player using the usual w-a-s-d keys. The player 
+                should move smoothly and continuously if a w-a-s-d key is held down and stop 
+                moving if the key is released. It should not be possible for the player to 
+                overlap or pass through the obstacle.
+            </p>
+            <p>When you're finished, check your work using <a href="check-exercise1-3.html">check-exercise1-3.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="400" height="400" controls>
+                    <source src="./assets/exercise1-3.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>To make the player move smoothly and continuously, use the <code>keyIsPressed</code> system 
+                        variable rather than an event function.
+                    </p>
+                    <p>To prevent the player from moving over the obstacle, you will need to add logic that checks if 
+                        moving in the selected direction would make the player square overlap with the obstacle on any 
+                        side. You have seen many similar examples of this type of logic--look at examples that check if 
+                        a shape has collided with an edge of the canvas or if a point (such as the mouse) is in or out of 
+                        bounds of some shape. 
+                    </p>
+                    <p>The logic is much easier if you write logic to work out if the player <em>can</em> move in the 
+                    intended direction than if you write logic to work out if the player <em>can't</em> move. For example, on the y axis:</p>
+                    <ul>
+                        <li>If the new position of the player is completely above the obstacle, it can move</li>
+                        <li>If the new position of the player is completely below the obstacle, it can move</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

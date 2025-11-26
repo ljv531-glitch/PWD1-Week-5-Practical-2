@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W5P2 - Exercise 1.2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.2</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p><code>exercise1-2/sketch.js</code> contains the code from the bouncingBall example shown in lecture. Read through 
+            the code and make sure you understand it. In particular, look at the structure of the <code>ball</code> object literal 
+            defined at the top of the file.</p>
+            <p>Add a key / property to the <code>ball</code> object called <code>diameter</code> and set its initial value to 100. Every 
+            time the ball hits a wall, it's diameter should decrease by 1 pixel.</p>
+            <p>Use the <code>ball</code>'s <code>diameter</code> property when drawing the ball and when checking whether it's hit a wall--as the 
+            ball shrinks, it should still go all the way to the wall before bouncing back.</p>
+            <p>Suggested, not required: the ball shrinks slowly so try printing the value of the diameter to the console. You should see it 
+                decrease each time it hits the wall.
+            </p>
+            <p>When you're finished, check your work using <a href="check-exercise1-2.html">check-exercise1-2.html</a>.</p>
+            <p>Expected output (showing the console output too):</p>
+            <p>
+                <video width="600" controls>
+                    <source src="./assets/exercise1-2.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>If you can't remember the syntax for adding a property to an object (a key: value) pair, use the existing 
+                        properties as a template.
+                    </p>
+                    <p>In <code>draw()</code>, update the call to <code>circle()</code> to pass the ball's <code>diameter</code> property 
+                    rather than the hardcoded 100. You will also need to update the instances of 50 in the conditionals checking if the ball 
+                    has hit the wall.</p>
+                    <p>To shrink the ball, subtract 1 from its diameter whenever the speed is modified.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
